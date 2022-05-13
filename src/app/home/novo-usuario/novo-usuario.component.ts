@@ -1,6 +1,6 @@
 import { NovoUsuarioService } from './novo-usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -14,8 +14,10 @@ export class NovoUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.NovoUsuarioForm = this.formBuilder.group({
-      email:[''],
-      fullName:[''],
+      //validator valida se e um email o angular ja tem essas validacoes
+      //required significa que o campo e obrigatorio
+      email:['', [Validators.required, Validators.email]],
+      fullName:['',[Validators.required, Validators.minLength(4)]],
       userName:[''],
       password:[''],
     })
