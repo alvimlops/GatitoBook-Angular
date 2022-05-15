@@ -7,6 +7,7 @@ const KEY = 'token';
 })
 export class TokenService {
 
+
  retornaToken(){
    return localStorage.getItem(KEY) ?? '';
  }
