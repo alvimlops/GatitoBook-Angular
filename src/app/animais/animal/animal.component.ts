@@ -1,7 +1,8 @@
+import { environment } from './../../../environments/environment';
 import { Component, Input, OnInit } from '@angular/core';
 
 //ele vai busca as imagens da API do back, aqui eu faço a chamada
-const API = 'http/localhost:3000';
+const API = environment.apiURL;
 
 @Component({
   selector: 'app-animal',

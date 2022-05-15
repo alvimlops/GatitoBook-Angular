@@ -1,6 +1,10 @@
+import { environment } from './../../../environments/environment';
 import { NovoUsuario } from './novo-usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { exists } from 'fs';
+
+const API = environment.apiURL;
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +16,11 @@ export class NovoUsuarioService {
   }
 
   cadastroNovoUsuario(NovoUsuario: NovoUsuario){
-    return this.http.post('http://localhot:3000/user/signup', NovoUsuario);
+    return this.http.post(`${API}/user/signup`, NovoUsuario);
   }
 
-  verificarUsuarioExistente(nomeUsuario: string){
-    return this.http.get(`http://localhost:3000/user/exists/${nomeUsuario}`)
+  verificaUsuarioExistente(nomeUsuario: string){
+    return this.http.get(`${API}/user/exists/${nomeUsuario}`);
   }
+
 }
