@@ -20,4 +20,12 @@ export class AnimaisService {
       headers,
     } )
   }
+
+  buscaPorID(id: number): Observable<Animais>{
+    const token = this.tokenService.retornaToken();
+    const headers = new HttpHeaders().append('x-access-token', token);
+    return this.http.get<Animais>(`${API}/photos/${id}, { headers}`)
+  }
+
+
 }
