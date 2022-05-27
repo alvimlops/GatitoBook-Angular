@@ -10,6 +10,7 @@ import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
 import { AnimalComponent } from './animal/animal.component';
 import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.component';
 import { ComentarioComponent } from './datalhe-animal/comentario/comentario.component';
+import { NovoAnimalComponent } from './novo-animal/novo-animal.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ComentarioComponent } from './datalhe-animal/comentario/comentario.comp
     ListaAnimaisComponent,
     AnimalComponent,
     DetalheAnimalComponent,
-    ComentarioComponent
+    ComentarioComponent,
+    NovoAnimalComponent
   ],
   imports: [
     CommonModule,
