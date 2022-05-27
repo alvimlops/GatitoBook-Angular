@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path:':animalId',
     component: DetalheAnimalComponent,
-  }
+  },
 ];
 
 @NgModule({
