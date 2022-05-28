@@ -20,7 +20,7 @@ export class NovoAnimalComponent implements OnInit {
     private animalService: AnimaisService,
     private formbuilder: FormBuilder,
     private router: Router
-  ) { }
+  ){ }
 
   ngOnInit(): void {
     this.formularioAnimal = this.formbuilder.group({
@@ -42,8 +42,8 @@ export class NovoAnimalComponent implements OnInit {
       }
     }, (error)=> console.log(error)
     );
-
   }
+
   gravaArquivo(arquivo : any) : void{
     const [file] = arquivo ?.files;
     this.file = file;
@@ -51,5 +51,4 @@ export class NovoAnimalComponent implements OnInit {
     reader.onload = (event: any) => (this.preview = event.target.result);
     reader.readAsDataURL(file);
   }
-
 }
